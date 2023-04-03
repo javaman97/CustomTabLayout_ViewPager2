@@ -38,8 +38,11 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        viewPager2.registerOnPageChangeCallback(object:ViewPager2.OnPageChangeCallback(){
-
+        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                tabLayout.selectTab(tabLayout.getTabAt(position))
+            }
         })
     }
 }
